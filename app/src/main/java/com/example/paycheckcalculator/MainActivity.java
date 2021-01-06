@@ -78,7 +78,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Shifts.remove(Shifts.size() - 1);
+                if(Shifts.size() > 0) {
+                    Shifts.remove(Shifts.size() - 1);
+                }
+
                 TimeTotalTV.setText(Shifts.size() == 0 ? "Welcome to PayCheckCalculator" : String.format("Total Time: %02d:%02d\n", sum(Shifts) / 60, sum(Shifts) % 60));
             }
         });
